@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dedicatorias</title>
+<title>Dedicatorias · Heroínas</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -55,6 +55,29 @@ body::after {
   margin: 0 auto;
   position: relative;
   z-index: 1;
+}
+
+/* KELLY MESSAGE */
+.kelly-msg {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  font-style: italic;
+  color: #c8b8f0;
+  text-align: center;
+  margin-top: 1rem;
+  line-height: 1.7;
+  opacity: 0.88;
+  animation: fadeUp 0.5s 0.2s ease both;
+}
+.kelly-msg strong {
+  font-style: normal;
+  font-weight: 700;
+  color: #f472b6;
+}
+.kelly-bottom {
+  margin-top: 1.8rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
 }
 
 /* HEADER */
@@ -274,14 +297,16 @@ h1 em { font-style: italic; color: #f472b6; }
 
   <header>
     <h1>I Wrote This<br><em>Especially For You</em></h1>
+    <p class="kelly-msg">Para ti, <strong>Kelly</strong> — porque hay personas que llevan en silencio una fuerza que el mundo no siempre sabe ver. Tú eres una de ellas, y estas palabras fueron escritas pensando en todo lo que eres, en todo lo que has vivido y en todo lo que aún estás por construir.</p>
   </header>
 
-  <!-- SCREEN 1: Selection -->
+  <!-- PANTALLA 1: Selección -->
   <div id="screenSelect">
     <div class="char-grid" id="charGrid"></div>
+    <p class="kelly-msg kelly-bottom">Cada una de estas heroínas tiene algo tuyo, <strong>Kelly</strong>. Su valentía, su determinación, su forma de levantarse una y otra vez. Elige la que más resuene con tu corazón… porque en el fondo, todas hablan de ti. 💫</p>
   </div>
 
-  <!-- SCREEN 2: Message -->
+  <!-- PANTALLA 2: Mensajes -->
   <div id="screenMessages">
     <div class="msg-header">
       <button class="back-btn" onclick="goBack()">← Volver</button>
@@ -294,7 +319,7 @@ h1 em { font-style: italic; color: #f472b6; }
   </div>
 
 </div>
-<div id="toast">✓ ¡Copied Message!</div>
+<div id="toast">✓ ¡Mensaje copiado!</div>
 
 <script>
 const chars = [
@@ -397,4 +422,4 @@ function doCopy(card, txt) {
 }
 </script>
 </body>
-</html>  
+</html>
