@@ -9,12 +9,12 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #05050f;
-  --card: #0d0d20;
-  --border: rgba(255,255,255,0.08);
-  --cream: #f0eeff;
-  --muted: #7878a0;
-  --accent: #f472b6;
+  --bg: #ffffff;
+  --card: #f8f6ff;
+  --border: rgba(100,80,200,0.12);
+  --cream: #1a1530;
+  --muted: #8878b0;
+  --accent: #e0318a;
 }
 
 body {
@@ -32,9 +32,11 @@ body::before {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 70% 55% at 10% 5%,  rgba(50,80,230,0.38) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 90% 85%, rgba(240,60,160,0.30) 0%, transparent 60%),
-    radial-gradient(ellipse 55% 45% at 55% 45%, rgba(8,8,25,0.65)    0%, transparent 75%);
+    radial-gradient(ellipse 60% 55% at 0% 0%,    rgba(140,195,255,0.90) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 55% at 100% 0%,  rgba(255,255,255,0.95) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 55% at 50% 50%,  rgba(255,160,215,0.85) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 55% at 0% 100%,  rgba(255,255,255,0.95) 0%, transparent 55%),
+    radial-gradient(ellipse 60% 55% at 100% 100%,rgba(140,195,255,0.90) 0%, transparent 55%);
   pointer-events: none;
   z-index: 0;
 }
@@ -44,8 +46,10 @@ body::after {
   position: fixed;
   inset: 0;
   background:
-    radial-gradient(ellipse 38% 30% at 78% 8%,  rgba(90,130,255,0.18) 0%, transparent 55%),
-    radial-gradient(ellipse 32% 25% at 12% 88%, rgba(255,90,180,0.15)  0%, transparent 55%);
+    radial-gradient(ellipse 55% 50% at 50% 0%,   rgba(255,170,220,0.80) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at 0% 50%,   rgba(160,205,255,0.80) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at 100% 50%, rgba(255,200,230,0.75) 0%, transparent 55%),
+    radial-gradient(ellipse 55% 50% at 50% 100%, rgba(150,200,255,0.80) 0%, transparent 55%);
   pointer-events: none;
   z-index: 0;
 }
@@ -62,22 +66,22 @@ body::after {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   font-style: italic;
-  color: #c8b8f0;
+  color: #7060a8;
   text-align: center;
   margin-top: 1rem;
   line-height: 1.7;
-  opacity: 0.88;
+  opacity: 0.9;
   animation: fadeUp 0.5s 0.2s ease both;
 }
 .kelly-msg strong {
   font-style: normal;
   font-weight: 700;
-  color: #f472b6;
+  color: #e0318a;
 }
 .kelly-bottom {
   margin-top: 1.8rem;
   padding-top: 1.4rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
+  border-top: 1px solid rgba(100,80,200,0.1);
 }
 
 /* HEADER */
@@ -86,77 +90,18 @@ header {
   margin-bottom: 2.4rem;
   animation: fadeUp 0.5s ease both;
 }
-.eyebrow {
-  font-size: 0.65rem;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  color: #a0b4ff;
-  margin-bottom: 0.8rem;
-  opacity: 0.9;
-}
 h1 {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(2rem, 7vw, 3rem);
   font-weight: 600;
   line-height: 1.1;
   margin-bottom: 0.7rem;
+  color: #1a1530;
 }
-h1 em { font-style: italic; color: #f472b6; }
-.subtitle {
-  font-size: 0.82rem;
-  color: var(--muted);
-  line-height: 1.7;
-  max-width: 380px;
-  margin: 0 auto;
-}
-
-/* STEP INDICATOR */
-.steps {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-bottom: 2rem;
-  animation: fadeUp 0.5s 0.08s ease both;
-}
-.step {
-  display: flex; align-items: center; gap: 0.4rem;
-  font-size: 0.72rem; letter-spacing: 0.06em;
-  color: var(--muted);
-  transition: color 0.3s;
-}
-.step.active { color: var(--cream); }
-.step.done   { color: #f472b6; }
-.step-dot {
-  width: 20px; height: 20px;
-  border-radius: 50%;
-  border: 1px solid currentColor;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.6rem; font-weight: 500;
-  flex-shrink: 0;
-  transition: background 0.3s, border-color 0.3s, color 0.3s;
-}
-.step.done .step-dot {
-  background: #f472b6;
-  border-color: #f472b6;
-  color: #05050f;
-}
-.step-line {
-  width: 36px; height: 1px;
-  background: var(--border);
-  transition: background 0.4s;
-}
-.step-line.done { background: rgba(244,114,182,0.4); }
+h1 em { font-style: italic; color: #e0318a; }
 
 /* SCREEN: SELECT */
 #screenSelect { animation: fadeUp 0.4s 0.14s ease both; }
-
-.select-label {
-  text-align: center;
-  font-size: 0.65rem; letter-spacing: 0.3em;
-  text-transform: uppercase; color: var(--muted);
-  margin-bottom: 1.2rem;
-}
 
 .char-grid {
   display: grid;
@@ -176,16 +121,17 @@ h1 em { font-style: italic; color: #f472b6; }
   text-align: center;
   transition: transform 0.2s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   animation: fadeUp 0.4s ease both;
+  box-shadow: 0 2px 12px rgba(100,80,200,0.06);
 }
-.char-card:hover { transform: translateY(-3px); }
+.char-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(100,80,200,0.12); }
 
 .char-emoji { font-size: 2rem; display: block; margin-bottom: 0.45rem; }
 .char-name {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem; font-weight: 600;
-  display: block; margin-bottom: 0.15rem;
+  display: block;
+  color: #1a1530;
 }
-.char-sub { font-size: 0.63rem; color: var(--muted); letter-spacing: 0.04em; }
 
 /* SCREEN: MESSAGES */
 #screenMessages { display: none; }
@@ -208,14 +154,15 @@ h1 em { font-style: italic; color: #f472b6; }
   font-size: 0.75rem; color: var(--muted);
   transition: color 0.2s, border-color 0.2s;
   flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(100,80,200,0.06);
 }
-.back-btn:hover { color: var(--cream); border-color: rgba(255,255,255,0.2); }
+.back-btn:hover { color: #1a1530; border-color: rgba(100,80,200,0.3); }
 
 .active-title {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.35rem; font-weight: 600; line-height: 1;
+  color: #1a1530;
 }
-.active-hint { font-size: 0.68rem; color: var(--muted); margin-top: 0.25rem; }
 
 .msg-grid { display: flex; flex-direction: column; gap: 0.85rem; }
 
@@ -228,6 +175,7 @@ h1 em { font-style: italic; color: #f472b6; }
   position: relative; overflow: hidden;
   transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
   animation: fadeUp 0.35s ease both;
+  box-shadow: 0 2px 12px rgba(100,80,200,0.05);
 }
 .msg-card:nth-child(1) { animation-delay: 0.04s; }
 .msg-card:nth-child(2) { animation-delay: 0.09s; }
@@ -245,7 +193,7 @@ h1 em { font-style: italic; color: #f472b6; }
   opacity: 0;
   transition: opacity 0.2s;
 }
-.msg-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,0.25); }
+.msg-card:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(100,80,200,0.12); }
 .msg-card:hover::after { opacity: 1; }
 
 .msg-num {
@@ -256,7 +204,7 @@ h1 em { font-style: italic; color: #f472b6; }
 .msg-body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem; line-height: 1.8;
-  color: #ddd7f0;
+  color: #2a1f50;
 }
 .copy-tag {
   position: absolute; top: 0.85rem; right: 1rem;
@@ -264,14 +212,14 @@ h1 em { font-style: italic; color: #f472b6; }
   color: var(--muted); opacity: 0; transition: opacity 0.2s;
 }
 .msg-card:hover .copy-tag { opacity: 1; }
-.msg-card.copied { border-color: rgba(100,220,150,0.35) !important; }
-.msg-card.copied .copy-tag { opacity: 1 !important; color: #7de8a8; }
+.msg-card.copied { border-color: rgba(50,180,100,0.4) !important; }
+.msg-card.copied .copy-tag { opacity: 1 !important; color: #1a9e60; }
 
 /* TOAST */
 #toast {
   position: fixed; bottom: 2rem; left: 50%;
   transform: translateX(-50%) translateY(18px);
-  background: #1e1b2e;
+  background: #1a1530;
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 40px; padding: 0.55rem 1.4rem;
   font-size: 0.78rem; color: #7de8a8; letter-spacing: 0.05em;
@@ -312,7 +260,6 @@ h1 em { font-style: italic; color: #f472b6; }
       <button class="back-btn" onclick="goBack()">← Volver</button>
       <div>
         <div class="active-title" id="activeTitle"></div>
-
       </div>
     </div>
     <div class="msg-grid" id="msgGrid"></div>
@@ -325,29 +272,28 @@ h1 em { font-style: italic; color: #f472b6; }
 const chars = [
   { id:"mulan",  emoji:"🌸", name:"Mulan",           color:"#e87a7a",
     msgs:["Hay algo en ti que no se puede enseñar ni copiar: esa valentía silenciosa que aparece cuando decides no rendirte. No necesitas demostrarle nada a nadie, porque cada paso que das ya deja claro que estás hecha para superar cualquier expectativa.","Eres de esas personas que transforman el miedo en impulso. Aunque el camino no siempre sea fácil, eliges avanzar… y eso dice mucho más de ti que cualquier victoria.","No naciste para encajar en lo que otros esperan, naciste para redefinirlo todo. Y cada vez que eliges ser tú misma, inspiras a los demás a hacer lo mismo.","Tu fuerza no siempre se ve, pero se siente en cada decisión difícil que has tomado. Y eso, más que impresionante, es admirable.","Has aprendido a confiar en ti incluso cuando el mundo duda. Y esa confianza es la base de todo lo grande que estás construyendo."]},
-  { id:"tiana",  emoji:"👑", name:"Tiana",            color:"#7ec87e",
+  { id:"tiana",  emoji:"👑", name:"Tiana",            color:"#4aaa6a",
     msgs:["Lo que más impacta de ti no es solo lo que sueñas, sino todo lo que estás dispuesta a hacer para lograrlo. Tu disciplina, tu enfoque y tu constancia te convierten en alguien verdaderamente extraordinaria.","Eres el tipo de mujer que no espera que las cosas pasen… hace que pasen. Y en ese proceso, construyes no solo metas, sino una historia que vale la pena admirar.","Sabes que los sueños requieren sacrificios, y aun así no te detienes. Esa determinación tuya es lo que te va a llevar mucho más lejos de lo que imaginas.","Tu esfuerzo diario, incluso cuando nadie lo ve, habla más fuerte que cualquier reconocimiento. Porque lo que estás construyendo es real, sólido y completamente tuyo.","No hay nada más poderoso que alguien que cree en sí misma y trabaja por ello… y tú eres exactamente eso."]},
-  { id:"moana",  emoji:"🌊", name:"Moana",             color:"#6ab8e8",
+  { id:"moana",  emoji:"🌊", name:"Moana",             color:"#3a90cc",
     msgs:["Hay una voz dentro de ti que siempre ha sabido quién eres, incluso cuando el mundo intentó decirte lo contrario. Y lo más admirable es que has tenido el valor de escucharla.","No le temes a lo desconocido, porque entiendes que crecer implica salir de lo cómodo. Y esa mentalidad te hace libre de una forma que pocos logran.","Eres una líder natural, no porque lo busques, sino porque tu forma de ser inspira a otros a confiar y avanzar.","Tienes esa energía que empuja, que mueve, que transforma… y que demuestra que los límites muchas veces solo existen en la mente.","No estás hecha para quedarte donde todo es seguro, estás hecha para descubrir, avanzar y dejar huella."]},
-  { id:"korra",  emoji:"🔥", name:"Korra",              color:"#e8a06a",
+  { id:"korra",  emoji:"🔥", name:"Korra",              color:"#d07830",
     msgs:["Tu fuerza no se mide solo por lo que has logrado, sino por todas las veces que tuviste que reconstruirte desde cero y aun así seguiste adelante.","Has enfrentado momentos que pudieron haberte detenido, pero elegiste aprender, sanar y evolucionar. Y eso es una forma de poder que pocos entienden.","No eres perfecta, y ahí está tu grandeza: en aceptar tus procesos, en crecer desde ellos y en no rendirte contigo misma.","Eres intensidad, coraje y transformación constante. Y cada versión tuya ha sido más fuerte que la anterior.","Tu historia no es de caídas, es de levantarte una y otra vez con más fuerza."]},
-  { id:"raya",   emoji:"🗡️", name:"Raya",               color:"#c8a060",
+  { id:"raya",   emoji:"🗡️", name:"Raya",               color:"#a07830",
     msgs:["Has aprendido a seguir adelante incluso cuando confiar no era fácil. Y aun así, no dejaste que el dolor te quitara tu esencia.","Tu resiliencia es admirable, porque no solo has resistido… has crecido a partir de todo lo que has vivido.","Eres fuerte no porque nunca hayas sido herida, sino porque decidiste no quedarte en ese lugar.","Tu capacidad de seguir creyendo, de seguir intentando, es lo que te hace verdaderamente poderosa.","Has demostrado que incluso después de la desconfianza, el corazón puede seguir siendo valiente."]},
-  { id:"elsa",   emoji:"❄️", name:"Elsa",                color:"#90d0f0",
+  { id:"elsa",   emoji:"❄️", name:"Elsa",                color:"#3a9ed0",
     msgs:["Durante mucho tiempo quizás sentiste que tenías que esconder partes de ti, pero hoy queda claro que tu verdadera fuerza está en aceptarte completamente.","No necesitas encajar en lo que otros entienden como 'normal', porque tu esencia es precisamente lo que te hace única.","Has aprendido que ser libre no es huir, es abrazar quién eres sin miedo.","Tu crecimiento ha sido silencioso, pero profundamente poderoso.","Hoy brillas no porque cambiaste para gustar, sino porque te permitiste ser tú."]},
-  { id:"merida", emoji:"🏹", name:"Mérida",              color:"#e8c06a",
+  { id:"merida", emoji:"🏹", name:"Mérida",              color:"#c09020",
     msgs:["Hay una fuerza en ti que no se deja moldear por expectativas ajenas. Y eso te convierte en alguien auténtico y difícil de olvidar.","No negocias tus sueños por complacer a otros, y eso habla de una seguridad que muchos quisieran tener.","Eres libre en la forma en que piensas, decides y vives. Y esa libertad es tu mayor tesoro.","Tienes el coraje de elegir tu propio camino, incluso cuando no es el más fácil.","Tu historia no sigue reglas… las crea."]},
-  { id:"kim",    emoji:"💥", name:"Kim Possible",        color:"#d07878",
+  { id:"kim",    emoji:"💥", name:"Kim Possible",        color:"#c05050",
     msgs:["Lo increíble de ti es que puedes con todo: con los retos grandes, con los pequeños, y con esos que nadie más ve.","Tienes una capacidad impresionante de mantenerte firme incluso cuando el mundo exige demasiado.","Eres práctica, inteligente y decidida… una combinación que te hace imparable.","No esperas a sentirte lista, simplemente actúas… y en eso está tu fuerza.","Demuestras que ser fuerte también es saber adaptarse sin perder el rumbo."]},
-  { id:"velma",  emoji:"🧠", name:"Vilma",               color:"#c890e8",
+  { id:"velma",  emoji:"🧠", name:"Vilma",               color:"#9050c8",
     msgs:["Tu inteligencia no solo está en lo que sabes, sino en cómo entiendes el mundo. Y eso te da una claridad que pocos tienen.","Ves más allá de lo evidente, analizas, conectas y resuelves… y eso te hace indispensable.","No necesitas hacer ruido para destacar, porque tu mente ya lo hace por ti.","Tu forma de pensar abre caminos donde otros solo ven obstáculos.","Eres prueba de que la verdadera fuerza también está en la inteligencia."]},
-  { id:"bella",  emoji:"📚", name:"Bella",               color:"#f0c060",
+  { id:"bella",  emoji:"📚", name:"Bella",               color:"#c09030",
     msgs:["Hay algo profundamente poderoso en ti: la capacidad de ver más allá de lo que todos ven. Donde otros se quedan con la superficie, tú encuentras la profundidad. Y eso te hace extraordinaria.","Tu curiosidad es tu mayor regalo. Esa necesidad de aprender, de explorar, de ir más allá de lo conocido, es lo que te distingue y te lleva a lugares que otros ni siquiera se atreven a imaginar.","Nunca has necesitado que nadie te defina. Sabes quién eres, lo que vales y lo que quieres, incluso cuando el mundo a tu alrededor no lo comprende. Esa claridad interior es tu mayor fortaleza.","No te conformas con lo que te ofrecen si no resuena con tu alma. Tienes el coraje de esperar lo que de verdad mereces, y esa paciencia no es debilidad… es sabiduría.","Lo más admirable de ti es que tu corazón no juzga por lo que se ve, sino por lo que se siente. Esa capacidad de amar con profundidad y autenticidad es algo que muy pocas personas tienen."]},
-  { id:"final",  emoji:"🌟", name:"Mensaje especial",    color:"#b0c8f0",
+  { id:"final",  emoji:"🌟", name:"Mensaje especial",    color:"#5070c0",
     msgs:["Eres una combinación de fuerza, inteligencia y determinación que no se encuentra todos los días. Y lo más admirable es que no intentas ser perfecta, solo auténtica.","Has construido tu camino con esfuerzo, con carácter y con una convicción que inspira.","No dependes de nadie para brillar, porque tu luz viene de todo lo que has superado.","Eres de esas personas que no solo sueñan, sino que convierten esos sueños en realidad.","Y si alguna vez dudas, recuerda esto: ya eres exactamente la mujer fuerte que un día decidiste ser.","Hay personas que iluminan los espacios con solo estar presentes. Tú eres una de ellas. Sin buscarlo, sin forzarlo, simplemente siendo tú… transformas todo lo que tocas.","Lo que más me gusta de ti no es solo lo que has logrado, sino la forma en que lo has hecho: con gracia, con carácter y con una elegancia que pocos saben mantener en los momentos difíciles.","No necesitas el aplauso de todos para saber que vas por buen camino. Tu intuición, tu esfuerzo y tu corazón ya lo confirman en silencio cada día.","Eres de esas mujeres que marcan antes y después en la vida de quienes te conocen. No porque lo intentes, sino porque tu presencia, tu forma de amar y de vivir, simplemente deja huella.","Que sepas que todo lo que eres hoy, cada detalle, cada virtud, cada cicatriz que te ha formado… es exactamente lo que hace que seas tan especial, tan única y tan difícil de olvidar."]}
 ];
 
-// Build character cards
 const grid = document.getElementById('charGrid');
 chars.forEach((ch, i) => {
   const c = document.createElement('div');
@@ -355,8 +301,8 @@ chars.forEach((ch, i) => {
   c.style.animationDelay = (i * 0.055) + 's';
   c.innerHTML = `<span class="char-emoji">${ch.emoji}</span><span class="char-name">${ch.name}</span>`;
   c.addEventListener('mouseenter', () => {
-    c.style.borderColor = ch.color + '66';
-    c.style.boxShadow  = `0 10px 28px ${ch.color}1a`;
+    c.style.borderColor = ch.color + '55';
+    c.style.boxShadow  = `0 10px 28px ${ch.color}22`;
   });
   c.addEventListener('mouseleave', () => { c.style.borderColor = ''; c.style.boxShadow = ''; });
   c.addEventListener('click', () => openChar(ch));
@@ -370,7 +316,6 @@ function openChar(ch) {
     sel.style.display = 'none';
     sel.classList.remove('out');
 
-    // Fill messages
     document.getElementById('activeTitle').textContent = ch.emoji + ' ' + ch.name;
     const mg = document.getElementById('msgGrid');
     mg.innerHTML = '';
@@ -379,7 +324,7 @@ function openChar(ch) {
       card.className = 'msg-card';
       card.style.cssText = `animation-delay:${i*0.07}s; --char-color:${ch.color}`;
       card.innerHTML = `<div class="msg-num">Mensaje ${i+1}</div><div class="msg-body">${txt}</div><span class="copy-tag">Toca para copiar</span>`;
-      card.addEventListener('mouseenter', () => card.style.borderColor = ch.color + '44');
+      card.addEventListener('mouseenter', () => card.style.borderColor = ch.color + '55');
       card.addEventListener('mouseleave', () => { if (!card.classList.contains('copied')) card.style.borderColor = ''; });
       card.addEventListener('click', () => doCopy(card, txt));
       mg.appendChild(card);
